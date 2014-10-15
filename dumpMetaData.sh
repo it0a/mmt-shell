@@ -41,30 +41,51 @@ then
     printf " OK\n"
     # 
 
-    #
+    # groups
+    # Dependencies: 
     printf "Dumping groups..."
     mysqldump -u root -p$DBPASS --extended-insert=FALSE --skip-comments smarts_too_dallas_07142014 groups > groups.sql
     printf " OK\n"
     #
 
+    # groups_area
+    # Dependencies: 
     printf "Dumping groups_area..."
     mysqldump -u root -p$DBPASS --extended-insert=FALSE --skip-comments smarts_too_dallas_07142014 groups_area > groups_area.sql
     printf " OK\n"
+
+    # groups_area_list_view
+    # Dependencies: 
     printf "Dumping groups_area_list_view..."
     mysqldump -u root -p$DBPASS --extended-insert=FALSE --skip-comments smarts_too_dallas_07142014 groups_area_list_view > groups_area_list_view.sql
     printf " OK\n"
+
+    # list_view
+    # Dependencies: 
     printf "Dumping list_view..."
     mysqldump -u root -p$DBPASS --extended-insert=FALSE --skip-comments smarts_too_dallas_07142014 list_view > list_view.sql
     printf " OK\n"
+
+    # list_view_field
+    # Dependencies: 
     printf "Dumping list_view_field..."
     mysqldump -u root -p$DBPASS --extended-insert=FALSE --skip-comments smarts_too_dallas_07142014 list_view_field > list_view_field.sql
     printf " OK\n"
+
+    # work_flow
+    # Dependencies: 
     printf "Dumping work_flow..."
     mysqldump -u root -p$DBPASS --extended-insert=FALSE --skip-comments smarts_too_dallas_07142014 work_flow > work_flow.sql
     printf " OK\n"
+
+    # step_definition
+    # Dependencies: 
     printf "Dumping step_definition..."
     mysqldump -u root -p$DBPASS --extended-insert=FALSE --skip-comments smarts_too_dallas_07142014 step_definition > step_definition.sql
     printf " OK\n"
+
+    # transition_definition
+    # Dependencies: 
     printf "Dumping transition_definition..."
     mysqldump -u root -p$DBPASS --extended-insert=FALSE --skip-comments smarts_too_dallas_07142014 transition_definition > transition_definition.sql
     printf " OK\n"
