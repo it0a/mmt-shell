@@ -60,6 +60,18 @@ then
     # Dependencies: print_template, domain_meta_data
     dump_table print_attachment_domain_meta_data
 
+    # Dependencies: domain_meta_data
+    dump_table print_section_definition
+
+    # Dependencies: domain_meta_data
+    dump_table print_text_definition
+
+    # Dependencies: domain_meta_data
+    dump_table print_template
+
+    # Dependencies: domain_meta_data
+    dump_table print_template_section
+
 else
     echo "Couldn't connect..."
 fi
