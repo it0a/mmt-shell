@@ -1,17 +1,21 @@
 #!/bin/bash
+get_db_pass() {
+    stty -echo
+    printf "Password: "
+    read DBPASS
+    stty echo
+}
+attempt_connection() {
+    printf "Connecting...\n"
+    mysql -u root -p$DBPASS -e exit 2>/dev/null 
+    CONNECTED=$?
+}
 dump_table() {
     printf "Dumping $1..."
     mysqldump -u root -p$DBPASS --extended-insert=FALSE --skip-comments smarts_too_dallas_07142014 $1 > $1.sql
     printf " OK\n"
 }
-stty -echo
-printf "Password: "
-read DBPASS
-stty echo
-printf " OK\n"
-mysql -u root -p$DBPASS -e exit 2>/dev/null 
-if [ "$?" = "0" ]
-then
+run_script() {
     # Dependencies: none
     dump_table domain_meta_data
 
@@ -72,6 +76,12 @@ then
     # Dependencies: domain_meta_data
     dump_table print_template_section
 
+}
+get_db_pass
+attempt_connection
+if [ "$CONNECTED" = "0" ]
+then
+    run_script
 else
     echo "Couldn't connect..."
 fi
