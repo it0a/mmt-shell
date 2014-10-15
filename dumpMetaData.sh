@@ -34,13 +34,13 @@ then
     dump_table groups_area
 
     # Dependencies: 
-    dump_table groups_area_list_view
-
-    # Dependencies: 
     dump_table list_view
 
-    # Dependencies: 
+    # Dependencies: list_view
     dump_table list_view_field
+
+    # Dependencies: groups_area, list_view
+    dump_table groups_area_list_view
 
     # Dependencies: 
     dump_table work_flow
@@ -50,6 +50,13 @@ then
 
     # Dependencies: 
     dump_table transition_definition
+
+    # Dependencies: domain_meta_data
+    dump_table print_attachment
+
+    # Dependencies: print_template, domain_meta_data
+    dump_table print_attachment_domain_meta_data
+
 else
     echo "Couldn't connect..."
 fi
