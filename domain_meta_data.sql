@@ -27,7 +27,7 @@ CREATE TABLE `domain_meta_data` (
   `tenant_id` int(11) NOT NULL,
   `visible` bit(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=161 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=162 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `domain_meta_data` WRITE;
@@ -141,6 +141,7 @@ INSERT INTO `domain_meta_data` VALUES (157,0,'','2014-08-29 14:08:05','com.stre
 INSERT INTO `domain_meta_data` VALUES (158,0,'','2014-09-26 13:37:38','com.streamlinx.fsc.OperationsBatch','\0','\0','Com.streamlinx.fsc. Operations Batch','2014-09-26 13:37:38','OperationsBatch',NULL,0,'');
 INSERT INTO `domain_meta_data` VALUES (159,0,'','2014-10-02 20:43:39','com.streamlinx.fsc.CustomerReceipt','\0','\0','Com.streamlinx.fsc. Customer Receipt','2014-10-02 20:43:39','CustomerReceipt',NULL,0,'');
 INSERT INTO `domain_meta_data` VALUES (160,0,'','2014-10-13 21:06:56','com.streamlinx.fsc.MasterAgreementAging','\0','\0','Com.streamlinx.fsc. Master Agreement Aging','2014-10-13 21:06:56','MasterAgreementAging',NULL,0,'');
+INSERT INTO `domain_meta_data` VALUES (161,0,'','2014-10-15 20:01:43','com.streamlinx.fsc.VendorBill','\0','\0','Com.streamlinx.fsc. Vendor Bill','2014-10-15 20:01:43','VendorBill',NULL,0,'');
 /*!40000 ALTER TABLE `domain_meta_data` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
