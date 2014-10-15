@@ -41,7 +41,7 @@ CREATE TABLE `property_meta_data` (
   KEY `FKA0A3DFBA40A25340` (`domain_meta_data_id`),
   CONSTRAINT `FKA0A3DFBA40A25340` FOREIGN KEY (`domain_meta_data_id`) REFERENCES `domain_meta_data` (`id`),
   CONSTRAINT `FKA0A3DFBAC62999B3` FOREIGN KEY (`domain_meta_data_id`) REFERENCES `domain_meta_data` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1957 DEFAULT CHARSET=latin1 COMMENT='InnoDB free: 16489472 kB; (`domain_meta_data_id`) REFER `lss';
+) ENGINE=InnoDB AUTO_INCREMENT=1965 DEFAULT CHARSET=latin1 COMMENT='InnoDB free: 16489472 kB; (`domain_meta_data_id`) REFER `lss';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `property_meta_data` WRITE;
@@ -1356,6 +1356,14 @@ INSERT INTO `property_meta_data` VALUES (1953,1,'',NULL,NULL,'class java.math.B
 INSERT INTO `property_meta_data` VALUES (1954,1,'',NULL,NULL,'class java.math.BigDecimal','2014-10-13 21:06:56','thirtyonesixtytotal','MasterAgreementAging',160,'31-60','2014-10-14 14:06:40','thirtyonesixtytotal',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Number',NULL);
 INSERT INTO `property_meta_data` VALUES (1955,1,'',NULL,NULL,'class java.math.BigDecimal','2014-10-13 21:06:56','totaldue','MasterAgreementAging',160,'Total Due','2014-10-14 14:06:29','totaldue',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Number',NULL);
 INSERT INTO `property_meta_data` VALUES (1956,1,'',NULL,NULL,'class java.math.BigDecimal','2014-10-13 21:06:56','zerothirtytotal','MasterAgreementAging',160,'0-30','2014-10-14 14:06:36','zerothirtytotal',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Number',NULL);
+INSERT INTO `property_meta_data` VALUES (1957,0,'',NULL,NULL,'class java.math.BigDecimal','2014-10-15 20:01:43','amount','VendorBill',161,'Amount','2014-10-15 20:01:43','amount',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Number',NULL);
+INSERT INTO `property_meta_data` VALUES (1958,0,'',NULL,NULL,'class java.util.Date','2014-10-15 20:01:43','dateCreated','VendorBill',161,'Date Created','2014-10-15 20:01:43','dateCreated',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Date',NULL);
+INSERT INTO `property_meta_data` VALUES (1959,0,'',NULL,NULL,'class java.util.Date','2014-10-15 20:01:43','lastUpdated','VendorBill',161,'Last Updated','2014-10-15 20:01:43','lastUpdated',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Date',NULL);
+INSERT INTO `property_meta_data` VALUES (1960,0,'',NULL,NULL,'class com.streamlinx.fsc.OperationsBatch','2014-10-15 20:01:43','operationsBatch','VendorBill',161,'Operations Batch','2014-10-15 20:01:43','operationsBatch',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Display',NULL);
+INSERT INTO `property_meta_data` VALUES (1961,0,'',NULL,NULL,'class java.util.Date','2014-10-15 20:01:43','postDate','VendorBill',161,'Post Date','2014-10-15 20:01:43','postDate',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Date',NULL);
+INSERT INTO `property_meta_data` VALUES (1962,0,'',NULL,NULL,'class java.util.Date','2014-10-15 20:01:43','transactionDate','VendorBill',161,'Transaction Date','2014-10-15 20:01:43','transactionDate',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Date',NULL);
+INSERT INTO `property_meta_data` VALUES (1963,0,'',NULL,NULL,'class com.streamlinx.fsc.Vendor','2014-10-15 20:01:43','vendor','VendorBill',161,'Vendor','2014-10-15 20:01:43','vendor',NULL,0,'',NULL,NULL,NULL,'',NULL,'Display',NULL);
+INSERT INTO `property_meta_data` VALUES (1964,0,'',NULL,NULL,'interface java.util.Set','2014-10-15 20:01:43','vendorBillLineItems','VendorBill',161,'Vendor Bill Line Items','2014-10-15 20:01:43','vendorBillLineItems',NULL,0,'',NULL,NULL,NULL,'',NULL,'Display',NULL);
 /*!40000 ALTER TABLE `property_meta_data` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
