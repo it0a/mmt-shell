@@ -51,6 +51,9 @@ then
     # Dependencies: 
     dump_table transition_definition
 
+    # Dependencies: step_definition
+    dump_table step_sub_tab
+
     # Dependencies: domain_meta_data
     dump_table print_attachment
 
