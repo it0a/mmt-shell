@@ -41,7 +41,7 @@ CREATE TABLE `property_meta_data` (
   KEY `FKA0A3DFBA40A25340` (`domain_meta_data_id`),
   CONSTRAINT `FKA0A3DFBA40A25340` FOREIGN KEY (`domain_meta_data_id`) REFERENCES `domain_meta_data` (`id`),
   CONSTRAINT `FKA0A3DFBAC62999B3` FOREIGN KEY (`domain_meta_data_id`) REFERENCES `domain_meta_data` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1966 DEFAULT CHARSET=latin1 COMMENT='InnoDB free: 16489472 kB; (`domain_meta_data_id`) REFER `lss';
+) ENGINE=InnoDB AUTO_INCREMENT=1969 DEFAULT CHARSET=latin1 COMMENT='InnoDB free: 16489472 kB; (`domain_meta_data_id`) REFER `lss';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `property_meta_data` WRITE;
@@ -1365,6 +1365,9 @@ INSERT INTO `property_meta_data` VALUES (1962,0,'',NULL,NULL,'class java.util.D
 INSERT INTO `property_meta_data` VALUES (1963,0,'',NULL,NULL,'class com.streamlinx.fsc.Vendor','2014-10-15 20:01:43','vendor','VendorBill',161,'Vendor','2014-10-15 20:01:43','vendor',NULL,0,'',NULL,NULL,NULL,'',NULL,'Display',NULL);
 INSERT INTO `property_meta_data` VALUES (1964,0,'',NULL,NULL,'interface java.util.Set','2014-10-15 20:01:43','vendorBillLineItems','VendorBill',161,'Vendor Bill Line Items','2014-10-15 20:01:43','vendorBillLineItems',NULL,0,'',NULL,NULL,NULL,'',NULL,'Display',NULL);
 INSERT INTO `property_meta_data` VALUES (1965,0,'',NULL,NULL,'class com.streamlinx.fsc.view.VendorBillSummary','2014-10-16 17:16:10','vendorBillSummary','VendorBill',161,'Vendor Bill Summary','2014-10-16 17:16:10','vendorBillSummary',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Display',NULL);
+INSERT INTO `property_meta_data` VALUES (1966,0,'',NULL,NULL,'class com.streamlinx.bcpt.workflow.StepTracking','2014-10-22 19:38:42','stepTracking','VendorBill',161,'Step Tracking','2014-10-22 19:38:42','stepTracking',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Display',NULL);
+INSERT INTO `property_meta_data` VALUES (1967,0,'',NULL,NULL,'class java.lang.String','2014-10-22 19:38:42','wfStatus','VendorBill',161,'Wf Status','2014-10-22 19:38:42','wfStatus',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Text',NULL);
+INSERT INTO `property_meta_data` VALUES (1968,0,'',NULL,NULL,'class com.streamlinx.bcpt.workflow.WorkFlowTracking','2014-10-22 19:38:42','workFlowTracking','VendorBill',161,'Work Flow Tracking','2014-10-22 19:38:42','workFlowTracking',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Display',NULL);
 /*!40000 ALTER TABLE `property_meta_data` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
