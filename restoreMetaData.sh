@@ -13,6 +13,7 @@ attempt_connection() {
 restore_table() {
     printf "Restoring $1..."
     mysql -u root -p$DBPASS smarts_too_dallas_07142014 < $1.sql
+    printf " OK\n"
 }
 run_script() {
     # Dependencies: none
