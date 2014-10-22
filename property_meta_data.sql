@@ -41,7 +41,7 @@ CREATE TABLE `property_meta_data` (
   KEY `FKA0A3DFBA40A25340` (`domain_meta_data_id`),
   CONSTRAINT `FKA0A3DFBA40A25340` FOREIGN KEY (`domain_meta_data_id`) REFERENCES `domain_meta_data` (`id`),
   CONSTRAINT `FKA0A3DFBAC62999B3` FOREIGN KEY (`domain_meta_data_id`) REFERENCES `domain_meta_data` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1969 DEFAULT CHARSET=latin1 COMMENT='InnoDB free: 16489472 kB; (`domain_meta_data_id`) REFER `lss';
+) ENGINE=InnoDB AUTO_INCREMENT=1984 DEFAULT CHARSET=latin1 COMMENT='InnoDB free: 16489472 kB; (`domain_meta_data_id`) REFER `lss';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `property_meta_data` WRITE;
@@ -1368,6 +1368,21 @@ INSERT INTO `property_meta_data` VALUES (1965,0,'',NULL,NULL,'class com.streaml
 INSERT INTO `property_meta_data` VALUES (1966,0,'',NULL,NULL,'class com.streamlinx.bcpt.workflow.StepTracking','2014-10-22 19:38:42','stepTracking','VendorBill',161,'Step Tracking','2014-10-22 19:38:42','stepTracking',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Display',NULL);
 INSERT INTO `property_meta_data` VALUES (1967,0,'',NULL,NULL,'class java.lang.String','2014-10-22 19:38:42','wfStatus','VendorBill',161,'Wf Status','2014-10-22 19:38:42','wfStatus',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Text',NULL);
 INSERT INTO `property_meta_data` VALUES (1968,0,'',NULL,NULL,'class com.streamlinx.bcpt.workflow.WorkFlowTracking','2014-10-22 19:38:42','workFlowTracking','VendorBill',161,'Work Flow Tracking','2014-10-22 19:38:42','workFlowTracking',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Display',NULL);
+INSERT INTO `property_meta_data` VALUES (1969,0,'',NULL,NULL,'class java.math.BigDecimal','2014-10-22 19:40:13','amount','VendorBillLineItem',162,'Amount','2014-10-22 19:40:13','amount',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Number',NULL);
+INSERT INTO `property_meta_data` VALUES (1970,0,'',NULL,NULL,'class java.util.Date','2014-10-22 19:40:13','dateCreated','VendorBillLineItem',162,'Date Created','2014-10-22 19:40:13','dateCreated',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Date',NULL);
+INSERT INTO `property_meta_data` VALUES (1971,0,'',NULL,NULL,'class java.util.Date','2014-10-22 19:40:13','lastUpdated','VendorBillLineItem',162,'Last Updated','2014-10-22 19:40:13','lastUpdated',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Date',NULL);
+INSERT INTO `property_meta_data` VALUES (1972,0,'',NULL,NULL,'class java.util.Date','2014-10-22 19:40:13','postDate','VendorBillLineItem',162,'Post Date','2014-10-22 19:40:13','postDate',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Date',NULL);
+INSERT INTO `property_meta_data` VALUES (1973,0,'',NULL,NULL,'class com.streamlinx.fsc.ServiceContractLineItem','2014-10-22 19:40:13','serviceContractLineItem','VendorBillLineItem',162,'Service Contract Line Item','2014-10-22 19:40:13','serviceContractLineItem',NULL,0,'',NULL,NULL,NULL,'',NULL,'Display',NULL);
+INSERT INTO `property_meta_data` VALUES (1974,0,'',NULL,NULL,'class com.streamlinx.fsc.ServiceDeliveryProfile','2014-10-22 19:40:13','serviceDeliveryProfile','VendorBillLineItem',162,'Service Delivery Profile','2014-10-22 19:40:13','serviceDeliveryProfile',NULL,0,'',NULL,NULL,NULL,'',NULL,'Display',NULL);
+INSERT INTO `property_meta_data` VALUES (1975,0,'',NULL,NULL,'class com.streamlinx.bcpt.workflow.StepTracking','2014-10-22 19:40:13','stepTracking','VendorBillLineItem',162,'Step Tracking','2014-10-22 19:40:13','stepTracking',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Display',NULL);
+INSERT INTO `property_meta_data` VALUES (1976,0,'',NULL,NULL,'class java.util.Date','2014-10-22 19:40:13','transactionDate','VendorBillLineItem',162,'Transaction Date','2014-10-22 19:40:13','transactionDate',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Date',NULL);
+INSERT INTO `property_meta_data` VALUES (1977,0,'',NULL,NULL,'class com.streamlinx.fsc.VendorBill','2014-10-22 19:40:13','vendorBill','VendorBillLineItem',162,'Vendor Bill','2014-10-22 19:40:13','vendorBill',NULL,0,'',NULL,NULL,NULL,'',NULL,'Display',NULL);
+INSERT INTO `property_meta_data` VALUES (1978,0,'',NULL,NULL,'class com.streamlinx.fsc.VendorBillLineItem','2014-10-22 19:40:13','vendorBillLineItem','VendorBillLineItem',162,'Vendor Bill Line Item','2014-10-22 19:40:13','vendorBillLineItem',NULL,0,'',NULL,NULL,NULL,'',NULL,'Display',NULL);
+INSERT INTO `property_meta_data` VALUES (1979,0,'',NULL,NULL,'class com.streamlinx.fsc.view.VendorBillLineItemSummary','2014-10-22 19:40:13','vendorBillLineItemSummary','VendorBillLineItem',162,'Vendor Bill Line Item Summary','2014-10-22 19:40:13','vendorBillLineItemSummary',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Display',NULL);
+INSERT INTO `property_meta_data` VALUES (1980,0,'',NULL,NULL,'interface java.util.Set','2014-10-22 19:40:13','vendorBillLineItems','VendorBillLineItem',162,'Vendor Bill Line Items','2014-10-22 19:40:13','vendorBillLineItems',NULL,0,'',NULL,NULL,NULL,'',NULL,'Display',NULL);
+INSERT INTO `property_meta_data` VALUES (1981,0,'',NULL,NULL,'interface java.util.Set','2014-10-22 19:40:13','vendorPaymentAllocations','VendorBillLineItem',162,'Vendor Payment Allocations','2014-10-22 19:40:13','vendorPaymentAllocations',NULL,0,'',NULL,NULL,NULL,'',NULL,'Display',NULL);
+INSERT INTO `property_meta_data` VALUES (1982,0,'',NULL,NULL,'class java.lang.String','2014-10-22 19:40:13','wfStatus','VendorBillLineItem',162,'Wf Status','2014-10-22 19:40:13','wfStatus',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Text',NULL);
+INSERT INTO `property_meta_data` VALUES (1983,0,'',NULL,NULL,'class com.streamlinx.bcpt.workflow.WorkFlowTracking','2014-10-22 19:40:13','workFlowTracking','VendorBillLineItem',162,'Work Flow Tracking','2014-10-22 19:40:13','workFlowTracking',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Display',NULL);
 /*!40000 ALTER TABLE `property_meta_data` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
