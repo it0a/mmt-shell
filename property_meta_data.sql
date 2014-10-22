@@ -41,7 +41,7 @@ CREATE TABLE `property_meta_data` (
   KEY `FKA0A3DFBA40A25340` (`domain_meta_data_id`),
   CONSTRAINT `FKA0A3DFBA40A25340` FOREIGN KEY (`domain_meta_data_id`) REFERENCES `domain_meta_data` (`id`),
   CONSTRAINT `FKA0A3DFBAC62999B3` FOREIGN KEY (`domain_meta_data_id`) REFERENCES `domain_meta_data` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1984 DEFAULT CHARSET=latin1 COMMENT='InnoDB free: 16489472 kB; (`domain_meta_data_id`) REFER `lss';
+) ENGINE=InnoDB AUTO_INCREMENT=1991 DEFAULT CHARSET=latin1 COMMENT='InnoDB free: 16489472 kB; (`domain_meta_data_id`) REFER `lss';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `property_meta_data` WRITE;
@@ -1383,6 +1383,13 @@ INSERT INTO `property_meta_data` VALUES (1980,0,'',NULL,NULL,'interface java.ut
 INSERT INTO `property_meta_data` VALUES (1981,0,'',NULL,NULL,'interface java.util.Set','2014-10-22 19:40:13','vendorPaymentAllocations','VendorBillLineItem',162,'Vendor Payment Allocations','2014-10-22 19:40:13','vendorPaymentAllocations',NULL,0,'',NULL,NULL,NULL,'',NULL,'Display',NULL);
 INSERT INTO `property_meta_data` VALUES (1982,0,'',NULL,NULL,'class java.lang.String','2014-10-22 19:40:13','wfStatus','VendorBillLineItem',162,'Wf Status','2014-10-22 19:40:13','wfStatus',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Text',NULL);
 INSERT INTO `property_meta_data` VALUES (1983,0,'',NULL,NULL,'class com.streamlinx.bcpt.workflow.WorkFlowTracking','2014-10-22 19:40:13','workFlowTracking','VendorBillLineItem',162,'Work Flow Tracking','2014-10-22 19:40:13','workFlowTracking',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Display',NULL);
+INSERT INTO `property_meta_data` VALUES (1984,0,'',NULL,NULL,'class java.math.BigDecimal','2014-10-22 19:58:07','amount','VendorBillLineItemSummary',163,'Amount','2014-10-22 19:58:07','amount',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Number',NULL);
+INSERT INTO `property_meta_data` VALUES (1985,0,'',NULL,NULL,'class java.math.BigDecimal','2014-10-22 19:58:07','eligiblePayment','VendorBillLineItemSummary',163,'Eligible Payment','2014-10-22 19:58:07','eligiblePayment',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Number',NULL);
+INSERT INTO `property_meta_data` VALUES (1986,0,'',NULL,NULL,'class java.math.BigDecimal','2014-10-22 19:58:07','totalAllocationReceived','VendorBillLineItemSummary',163,'Total Allocation Received','2014-10-22 19:58:07','totalAllocationReceived',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Number',NULL);
+INSERT INTO `property_meta_data` VALUES (1987,0,'',NULL,NULL,'class java.math.BigDecimal','2014-10-22 19:58:07','totalDebitReceived','VendorBillLineItemSummary',163,'Total Debit Received','2014-10-22 19:58:07','totalDebitReceived',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Number',NULL);
+INSERT INTO `property_meta_data` VALUES (1988,0,'',NULL,NULL,'class java.math.BigDecimal','2014-10-22 19:58:07','totalReceived','VendorBillLineItemSummary',163,'Total Received','2014-10-22 19:58:07','totalReceived',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Number',NULL);
+INSERT INTO `property_meta_data` VALUES (1989,0,'',NULL,NULL,'class java.math.BigDecimal','2014-10-22 19:58:07','totalUnpaid','VendorBillLineItemSummary',163,'Total Unpaid','2014-10-22 19:58:07','totalUnpaid',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Number',NULL);
+INSERT INTO `property_meta_data` VALUES (1990,0,'',NULL,NULL,'class com.streamlinx.fsc.VendorBillLineItem','2014-10-22 19:58:07','vendorBillLineItem','VendorBillLineItemSummary',163,'Vendor Bill Line Item','2014-10-22 19:58:07','vendorBillLineItem',NULL,0,'',NULL,NULL,NULL,'\0',NULL,'Display',NULL);
 /*!40000 ALTER TABLE `property_meta_data` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
