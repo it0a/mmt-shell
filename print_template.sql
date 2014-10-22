@@ -33,7 +33,7 @@ CREATE TABLE `print_template` (
   CONSTRAINT `FK9169FDCC5A83AC16` FOREIGN KEY (`work_flow_tracking_id`) REFERENCES `work_flow_tracking` (`id`),
   CONSTRAINT `FK9169FDCCAF0BA333` FOREIGN KEY (`step_tracking_id`) REFERENCES `step_tracking` (`id`),
   CONSTRAINT `FK9169FDCCC6CA088F` FOREIGN KEY (`tenant_location_id`) REFERENCES `tenant_location_base` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `print_template` WRITE;
@@ -49,6 +49,8 @@ INSERT INTO `print_template` VALUES (9,0,'2014-03-28 10:22:22','A print template
 INSERT INTO `print_template` VALUES (11,145,'2014-06-03 11:07:31','Reduced Cleaning Proposal',105,'2014-07-16 15:00:05','Reduced Cleaning Proposal',1,NULL,NULL,NULL);
 INSERT INTO `print_template` VALUES (12,2,'2014-09-16 18:01:03','InvoiceBatch',158,'2014-09-16 18:01:12','InvoiceBatch',NULL,NULL,NULL,NULL);
 INSERT INTO `print_template` VALUES (13,2,'2014-09-16 18:01:03','Invoice',157,'2014-09-16 18:01:12','Invoice',NULL,NULL,NULL,NULL);
+INSERT INTO `print_template` VALUES (14,2,'2014-10-16 17:04:08','VendorStatement',36,'2014-10-16 17:04:27','VendorStatement',NULL,NULL,NULL,NULL);
+INSERT INTO `print_template` VALUES (15,3,'2014-10-13 15:33:47',NULL,155,'2014-10-13 15:33:57','MasterAgreementStatement',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `print_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
