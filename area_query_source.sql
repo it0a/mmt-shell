@@ -28,7 +28,7 @@ CREATE TABLE `area_query_source` (
   KEY `FKED5D01E48CBC31E5` (`area_id`),
   CONSTRAINT `FKED5D01E472FBD6E8` FOREIGN KEY (`master_domain_id`) REFERENCES `domain_meta_data` (`id`),
   CONSTRAINT `FKED5D01E48CBC31E5` FOREIGN KEY (`area_id`) REFERENCES `area_meta_data` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=152 DEFAULT CHARSET=latin1 COMMENT='InnoDB free: 16489472 kB; (`master_domain_id`) REFER `lss_bc';
+) ENGINE=InnoDB AUTO_INCREMENT=153 DEFAULT CHARSET=latin1 COMMENT='InnoDB free: 16489472 kB; (`master_domain_id`) REFER `lss_bc';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `area_query_source` WRITE;
@@ -133,6 +133,7 @@ INSERT INTO `area_query_source` VALUES (147,0,'\0','2014-09-26 13:37:39','Operat
 INSERT INTO `area_query_source` VALUES (149,1,'\0','2014-10-02 20:45:09','CustomerReceipt','2014-10-02 20:45:10','CustomerReceipt',153,'from CustomerReceipt as customerreceipt',159);
 INSERT INTO `area_query_source` VALUES (150,9,'\0','2014-10-13 21:08:36','Collections','2014-10-14 13:18:50','Collections',149,'from MasterAgreementAging as masteragreementaging\r\ninner join masteragreementaging.masterAgreement as masteragreement\r\ninner join masteragreement.customerLocationBilling as customerlocation\r\ninner join customerlocation.customerlocationaddress2 as address2\r\ninner join address2.address as address',155);
 INSERT INTO `area_query_source` VALUES (151,1,'\0','2014-10-22 19:42:03','VendorBillLineItem','2014-10-22 19:42:03','VendorBillLineItem',154,'from VendorBillLineItem as vendorbilllineitem',162);
+INSERT INTO `area_query_source` VALUES (152,1,'\0','2014-10-22 19:44:37','VendorBill','2014-10-22 19:44:37','VendorBill',155,'from VendorBill as vendorbill',161);
 /*!40000 ALTER TABLE `area_query_source` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

@@ -42,7 +42,7 @@ CREATE TABLE `list_view` (
   CONSTRAINT `FKB70AF5A65D3B4D1` FOREIGN KEY (`area_category_id`) REFERENCES `area_category` (`id`),
   CONSTRAINT `FKB70AF5A698C5D9DB` FOREIGN KEY (`default_sort_by_id`) REFERENCES `list_view_field` (`id`),
   CONSTRAINT `FKB70AF5A6C2567536` FOREIGN KEY (`area_data_source_id`) REFERENCES `area_query_source` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=319 DEFAULT CHARSET=latin1 COMMENT='InnoDB free: 16489472 kB; (`area_data_source_id`) REFER `lss';
+) ENGINE=InnoDB AUTO_INCREMENT=320 DEFAULT CHARSET=latin1 COMMENT='InnoDB free: 16489472 kB; (`area_data_source_id`) REFER `lss';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `list_view` WRITE;
@@ -203,6 +203,7 @@ INSERT INTO `list_view` VALUES (313,3,149,NULL,'2014-10-02 20:45:10','CustomerRe
 INSERT INTO `list_view` VALUES (316,2,150,'address2.id = (select min(id) from CustomerLocationBaseAddress where customerLocation = customerlocation)\r\nand masteragreementaging.agingdays > 0','2014-10-14 14:03:00','Collections',0,'2014-10-14 14:15:23',500,'Collections',100,0,0,'Area','hql',NULL,NULL,'asc',NULL,7);
 INSERT INTO `list_view` VALUES (317,0,137,NULL,'2014-10-15 16:14:56','MasterAgreements',0,'2014-10-15 16:14:56',500,'MasterAgreements',20,0,0,'SubArea','hql',NULL,NULL,'asc',NULL,NULL);
 INSERT INTO `list_view` VALUES (318,0,151,NULL,'2014-10-22 19:42:03','VendorBillLineItem',0,'2014-10-22 19:42:03',500,'VendorBillLineItem',100,1,0,'Area','hql',NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `list_view` VALUES (319,0,152,NULL,'2014-10-22 19:44:37','VendorBill',0,'2014-10-22 19:44:37',500,'VendorBill',100,1,0,'Area','hql',NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `list_view` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
