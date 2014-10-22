@@ -37,7 +37,7 @@ CREATE TABLE `step_definition` (
   PRIMARY KEY (`id`),
   KEY `FK31E18CA63D16AA0C` (`work_flow_id`),
   CONSTRAINT `FK31E18CA63EAC915D` FOREIGN KEY (`work_flow_id`) REFERENCES `work_flow` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=175 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=176 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `step_definition` WRITE;
@@ -159,6 +159,7 @@ INSERT INTO `step_definition` VALUES (171,0,'2014-08-29 14:08:16',NULL,'MasterIn
 INSERT INTO `step_definition` VALUES (172,0,'2014-09-26 13:37:27',NULL,'MasterAgreement Active','2014-09-26 13:37:27',NULL,NULL,NULL,'Steps','Active','Basic',NULL,76,NULL,NULL,'\0','edit',NULL,NULL,NULL);
 INSERT INTO `step_definition` VALUES (173,0,'2014-09-26 13:37:39',NULL,'OperationsBatch Draft','2014-09-26 13:37:39',NULL,NULL,NULL,'Steps','OperationsBatch Draft','Basic',NULL,77,NULL,NULL,'\0',NULL,NULL,NULL,NULL);
 INSERT INTO `step_definition` VALUES (174,0,'2014-10-02 20:45:10',NULL,'CustomerReceipt Draft','2014-10-02 20:45:10',NULL,NULL,NULL,'Steps','CustomerReceipt Draft','Basic',NULL,78,NULL,NULL,'\0',NULL,NULL,NULL,NULL);
+INSERT INTO `step_definition` VALUES (175,0,'2014-10-22 19:42:03',NULL,'VendorBillLineItem Draft','2014-10-22 19:42:03',NULL,NULL,NULL,'Steps','VendorBillLineItem Draft','Basic',NULL,79,NULL,NULL,'\0',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `step_definition` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

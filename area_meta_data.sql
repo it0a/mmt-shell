@@ -31,7 +31,7 @@ CREATE TABLE `area_meta_data` (
   PRIMARY KEY (`id`),
   KEY `FKA69DCC7272FBD6E8` (`master_domain_id`),
   CONSTRAINT `FKA69DCC7272FBD6E8` FOREIGN KEY (`master_domain_id`) REFERENCES `domain_meta_data` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=154 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=155 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `area_meta_data` WRITE;
@@ -116,6 +116,7 @@ INSERT INTO `area_meta_data` VALUES (149,0,'','2014-08-14 14:41:18','MasterAgre
 INSERT INTO `area_meta_data` VALUES (151,0,'','2014-08-29 14:08:10','MasterInvoice','MasterInvoice','2014-08-29 14:08:10','MasterInvoice',157,NULL,'User',NULL,NULL,NULL,NULL);
 INSERT INTO `area_meta_data` VALUES (152,0,'','2014-09-26 13:37:39','OperationsBatch','OperationsBatch','2014-09-26 13:37:39','OperationsBatch',158,NULL,'User',NULL,NULL,NULL,NULL);
 INSERT INTO `area_meta_data` VALUES (153,0,'','2014-10-02 20:45:09','CustomerReceipt','CustomerReceipt','2014-10-02 20:45:09','CustomerReceipt',159,NULL,'System',NULL,NULL,NULL,NULL);
+INSERT INTO `area_meta_data` VALUES (154,0,'','2014-10-22 19:42:03','VendorBillLineItem','VendorBillLineItem','2014-10-22 19:42:03','VendorBillLineItem',162,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `area_meta_data` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

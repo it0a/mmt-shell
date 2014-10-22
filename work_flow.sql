@@ -32,7 +32,7 @@ CREATE TABLE `work_flow` (
   KEY `FK40F9B59C6B5BB288` (`primary_domain_id`),
   CONSTRAINT `FK40F9B59C6B5BB288` FOREIGN KEY (`primary_domain_id`) REFERENCES `domain_meta_data` (`id`),
   CONSTRAINT `FK40F9B59CE6E6FE0` FOREIGN KEY (`area_meta_data_id`) REFERENCES `area_meta_data` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `work_flow` WRITE;
@@ -84,6 +84,7 @@ INSERT INTO `work_flow` VALUES (75,0,'2014-08-29 14:08:16','MasterInvoice Basic 
 INSERT INTO `work_flow` VALUES (76,0,'2014-09-26 13:37:27','MasterAgreement Basic Workflow','2014-09-26 13:37:27','Active','MasterAgreement Basic Workflow',149,155,NULL,NULL,NULL,NULL,'\0');
 INSERT INTO `work_flow` VALUES (77,0,'2014-09-26 13:37:39','OperationsBatch Basic Workflow','2014-09-26 13:37:39','Active','OperationsBatch Basic Workflow',152,158,NULL,NULL,NULL,NULL,'\0');
 INSERT INTO `work_flow` VALUES (78,0,'2014-10-02 20:45:10','CustomerReceipt Basic Workflow','2014-10-02 20:45:10','Active','CustomerReceipt Basic Workflow',153,159,NULL,NULL,NULL,NULL,'\0');
+INSERT INTO `work_flow` VALUES (79,0,'2014-10-22 19:42:03','VendorBillLineItem Basic Workflow','2014-10-22 19:42:03','Active','VendorBillLineItem Basic Workflow',154,162,NULL,NULL,NULL,NULL,'\0');
 /*!40000 ALTER TABLE `work_flow` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
