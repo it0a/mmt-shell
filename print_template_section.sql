@@ -26,7 +26,7 @@ CREATE TABLE `print_template_section` (
   KEY `FKE2A49772CA598086` (`print_template_id`),
   CONSTRAINT `FKE2A4977213043BD5` FOREIGN KEY (`print_section_definition_id`) REFERENCES `print_section_definition` (`id`),
   CONSTRAINT `FKE2A49772CA598086` FOREIGN KEY (`print_template_id`) REFERENCES `print_template` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1480 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1482 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `print_template_section` WRITE;
@@ -63,6 +63,8 @@ INSERT INTO `print_template_section` VALUES (1475,0,'2014-07-16 15:00:05','2014-
 INSERT INTO `print_template_section` VALUES (1477,0,'2014-07-16 15:00:05','2014-07-16 15:00:05',43,11,6,'');
 INSERT INTO `print_template_section` VALUES (1478,0,'2014-09-16 18:01:12','2014-09-16 18:01:12',46,12,1,'');
 INSERT INTO `print_template_section` VALUES (1479,0,'2014-09-16 18:01:12','2014-09-16 18:01:12',47,13,1,'');
+INSERT INTO `print_template_section` VALUES (1480,0,'2014-10-16 17:04:27','2014-10-16 17:04:27',49,14,1,'');
+INSERT INTO `print_template_section` VALUES (1481,0,'2014-10-13 15:33:57','2014-10-13 15:33:57',48,15,1,'');
 /*!40000 ALTER TABLE `print_template_section` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
