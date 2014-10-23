@@ -127,6 +127,7 @@ INSERT INTO `groups_area_list_view` VALUES (88,272);
 INSERT INTO `groups_area_list_view` VALUES (88,291);
 INSERT INTO `groups_area_list_view` VALUES (103,313);
 INSERT INTO `groups_area_list_view` VALUES (103,316);
+INSERT INTO `groups_area_list_view` VALUES (103,320);
 /*!40000 ALTER TABLE `groups_area_list_view` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

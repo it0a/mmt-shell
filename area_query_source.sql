@@ -134,7 +134,7 @@ INSERT INTO `area_query_source` VALUES (149,1,'\0','2014-10-02 20:45:09','Custom
 INSERT INTO `area_query_source` VALUES (150,9,'\0','2014-10-13 21:08:36','Collections','2014-10-14 13:18:50','Collections',149,'from MasterAgreementAging as masteragreementaging\r\ninner join masteragreementaging.masterAgreement as masteragreement\r\ninner join masteragreement.customerLocationBilling as customerlocation\r\ninner join customerlocation.customerlocationaddress2 as address2\r\ninner join address2.address as address',155);
 INSERT INTO `area_query_source` VALUES (151,1,'\0','2014-10-22 19:42:03','VendorBillLineItem','2014-10-22 19:42:03','VendorBillLineItem',154,'from VendorBillLineItem as vendorbilllineitem',162);
 INSERT INTO `area_query_source` VALUES (152,1,'\0','2014-10-22 19:44:37','VendorBill','2014-10-22 19:44:37','VendorBill',155,'from VendorBill as vendorbill',161);
-INSERT INTO `area_query_source` VALUES (153,5,'','2014-10-22 20:13:14','Vendor Billing','2014-10-22 20:55:25','Vendor Billing',77,'FROM Vendor AS vendor\r\nINNER JOIN vendor.vendorBills AS vendorbill\r\nINNER JOIN vendorbill.vendorBillLineItems AS vendorbilllineitem\r\nINNER JOIN vendorbilllineitem.vendorBillLineItemSummary AS vendorbilllineitemsummary\r\n\r\n',36);
+INSERT INTO `area_query_source` VALUES (153,6,'','2014-10-22 20:13:14','Vendor Billing','2014-10-23 13:29:52','Vendor Billing',77,'FROM Vendor AS vendor\r\nINNER JOIN vendor.vendorBills AS vendorbill\r\nINNER JOIN vendorbill.vendorBillLineItems AS vendorbilllineitem\r\nINNER JOIN vendorbilllineitem.vendorBillLineItemSummary AS vendorbilllineitemsummary\r\n\r\n',36);
 /*!40000 ALTER TABLE `area_query_source` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
