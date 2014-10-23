@@ -28,7 +28,7 @@ CREATE TABLE `area_menu_item` (
   PRIMARY KEY (`id`),
   KEY `FK8B5BE0C1E6E6FE0` (`area_meta_data_id`),
   CONSTRAINT `FK8B5BE0C1E6E6FE0` FOREIGN KEY (`area_meta_data_id`) REFERENCES `area_meta_data` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `area_menu_item` WRITE;
