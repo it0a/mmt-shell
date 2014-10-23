@@ -1,0 +1,12 @@
+if [ "$1" = "dump" ]
+then
+    sh ./dumpMeta
+elif [ "$1" = "restore" ]
+then
+    sh ./restMeta
+else
+    echo "Available commands:"
+    echo "dump"
+    echo "restore"
+fi
+
