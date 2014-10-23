@@ -10,8 +10,5 @@ do_init() {
         BCMT_OPTION="restore"
     else
         BCMT_INITOK="0"
-        echo "Available commands:"
-        echo "dump"
-        echo "restore"
     fi
 }
