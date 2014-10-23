@@ -1,0 +1,16 @@
+#!/bin/bash
+get_db_pass() {
+    stty -echo
+    printf "Password: "
+    read DBPASS
+    stty echo
+}
+attempt_connection() {
+    printf "Connecting...\n"
+    mysql -u root -p$DBPASS -e exit 2>/dev/null 
+    BCMT_DBINITOK=$?
+}
+do_dbinit() {
+    get_db_pass
+    attempt_connection
+}

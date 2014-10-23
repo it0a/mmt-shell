@@ -1,13 +1,24 @@
 #!/bin/bash
-if [ "$1" = "dump" ]
+. includes/init
+. includes/dbinit
+. includes/dumpMeta
+. includes/restMeta
+do_init
+if [ BCPT_INITOK = "1" ]
 then
-    sh ./dumpMeta
-elif [ "$1" = "restore" ]
-then
-    sh ./restMeta
-else
-    echo "Available commands:"
-    echo "dump"
-    echo "restore"
+    do_dbinit
+    if [ BCPT_DBINITOK = "1" ]
+    then
+        if [ BCPT_OPTION = "dump" ]
+        then
+            do_dump
+        elif [ BCPT_OPTION = "restore" ]
+        then
+            do_restore
+        else
+            echo "This should never happen!"
+        fi
+    else
+        echo "Couldn't connect..."
+    fi
 fi
-
