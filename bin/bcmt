@@ -1,4 +1,5 @@
 #!/bin/bash
+BCPT_RELPATH="`dirname \"$0\"`"
 . includes/init
 . includes/dbinit
 . includes/dumpMeta
