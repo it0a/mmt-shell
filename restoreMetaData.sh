@@ -25,6 +25,9 @@ run_script() {
     # Dependencies: domain_meta_data
     restore_table area_meta_data
 
+    # Dependencies: area_meta_data
+    restore_table area_menu_item
+
     # Dependencies: domain_meta_data, area_meta_data
     restore_table area_query_source
 
