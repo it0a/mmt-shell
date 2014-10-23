@@ -1,9 +1,11 @@
 #!/bin/bash
-BCPT_RELPATH="`dirname \"$0\"`"
-. includes/init
-. includes/dbinit
-. includes/dumpMeta
-. includes/restMeta
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd -P`
+popd > /dev/null
+. $SCRIPTPATH/includes/init
+. $SCRIPTPATH/includes/dbinit
+. $SCRIPTPATH/includes/dumpMeta
+. $SCRIPTPATH/includes/restMeta
 do_init
 if [ BCPT_INITOK = "1" ]
 then
