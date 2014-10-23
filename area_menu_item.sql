@@ -41,7 +41,7 @@ INSERT INTO `area_menu_item` VALUES (23,0,'',151,'Accounting Quick Functions','
 INSERT INTO `area_menu_item` VALUES (25,0,'',151,'First of Month Line Items (pre-bill)','masterInvoice',1,2,'Custom','First of Month Line Items (pre-bill)',NULL,'retrieveAccountingBatchHistory');
 INSERT INTO `area_menu_item` VALUES (29,0,'',151,'Accounting Stats','accounting',1,1,'Custom','Accounting Stats','','accountingStats');
 INSERT INTO `area_menu_item` VALUES (32,0,'\0',151,'Receipts Summary','accounting',2,2,'Custom','Receipts Summary',NULL,'receiptsSummary');
-INSERT INTO `area_menu_item` VALUES (33,0,'\0',151,'Simpler accounting home screen','accounting',1,1,'Custom','Receipts Summary',NULL,'receiptsSummary');
+INSERT INTO `area_menu_item` VALUES (33,0,'\0',151,'SimpleAccounting','accounting',1,3,'Custom','SimpleAccounting',NULL,'simpleAccounting');
 /*!40000 ALTER TABLE `area_menu_item` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
