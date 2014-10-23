@@ -6,16 +6,16 @@ popd > /dev/null
 . $SCRIPTPATH/includes/dbinit
 . $SCRIPTPATH/includes/dumpMeta
 . $SCRIPTPATH/includes/restMeta
-do_init
-if [ BCPT_INITOK = "1" ]
+do_init $1
+if [ $BCMT_INITOK = "1" ]
 then
     do_dbinit
-    if [ BCPT_DBINITOK = "1" ]
+    if [ $BCMT_DBINITOK = "0" ]
     then
-        if [ BCPT_OPTION = "dump" ]
+        if [ $BCMT_OPTION = "dump" ]
         then
             do_dump
-        elif [ BCPT_OPTION = "restore" ]
+        elif [ $BCMT_OPTION = "restore" ]
         then
             do_restore
         else
@@ -24,4 +24,8 @@ then
     else
         echo "Couldn't connect..."
     fi
+else
+    echo "Available commands:"
+    echo "dump"
+    echo "restore"
 fi
