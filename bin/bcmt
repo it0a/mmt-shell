@@ -18,7 +18,6 @@ die() {
 pushd `dirname $0` > /dev/null
 SCRIPTPATH=`pwd -P`
 popd > /dev/null
-. $SCRIPTPATH/includes/init
 . $SCRIPTPATH/includes/dbinit
 . $SCRIPTPATH/includes/dumpMeta
 . $SCRIPTPATH/includes/restMeta
