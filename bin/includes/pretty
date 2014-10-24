@@ -1,0 +1,8 @@
+#!/bin/bash
+unk_status() {
+    echo ${COLOR_WHITE}[${COLOR_YELLOW}????${COLOR_WHITE}]${COLOR_NONE} $1
+}
+
+unk_ok_status() {
+    echo -en "\033[1A\033[1;35m[ OK ] $1\033[1B\033[6D${COLOR_NONE}"
+}

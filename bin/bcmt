@@ -3,6 +3,7 @@
 pushd `dirname $0` > /dev/null
 SCRIPTPATH=`pwd -P`
 popd > /dev/null
+. $SCRIPTPATH/includes/colors
 . $SCRIPTPATH/includes/dbinit
 . $SCRIPTPATH/includes/dumpMeta
 . $SCRIPTPATH/includes/restMeta
@@ -10,26 +11,49 @@ popd > /dev/null
 . $SCRIPTPATH/bcmt.conf
 #utility
 display_usage() {
-    echo "usage: ${0##*/} [-h host] [-P port] [-u user] [-d] [-r] [database] (default: $BCMT_DBNAME)"
-    echo "flag;name;description;default"               | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
-    echo "====;====;===========;======="               | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
-    echo "-h:;host;host of target database;$BCMT_HOST" | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
-    echo "-P:;port;port of target database;$BCMT_PORT" | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
-    echo "-u:;user;user of target database;$BCMT_USER" | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
-    echo "-d:;dump;dump tables;"                       | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
-    echo "-r:;restore;restore tables;"                 | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    tput bold
+    echo -e "${COLOR_LIGHTCYAN}usage:${COLOR_WHITE} ${0##*/} [-h host] [-P port] [-u user] [-d] [-r] [database]${COLOR_NONE}"
+    tput dim
+    tput smso
+    tput smul
+    echo "flag;name;description;default"       | awk -F ';' '{printf "%-7s %-10s %-18s %-12s\n", $1, $2, $3, $4}'
+    tput rmso
+    tput rmul
+    echo "-h;host;host of database;$BCMT_HOST" | awk -F ';' '{printf "%-7s %-10s %-18s %-12s\n", $1, $2, $3, $4}'
+    echo "-P;port;port of database;$BCMT_PORT" | awk -F ';' '{printf "%-7s %-10s %-18s %-12s\n", $1, $2, $3, $4}'
+    echo "-u;user;user of database;$BCMT_USER" | awk -F ';' '{printf "%-7s %-10s %-18s %-12s\n", $1, $2, $3, $4}'
+    echo "-d;dump;from tables.conf;"           | awk -F ';' '{printf "%-7s %-10s %-18s %-12s\n", $1, $2, $3, $4}'
+    echo "-r;restore;from tables.conf;"        | awk -F ';' '{printf "%-7s %-10s %-18s %-12s\n", $1, $2, $3, $4}'
     echo ""
-    echo "Create dump tables using values in bcmt.conf:"
+    echo ";database;name of database;$BCMT_DBNAME" | awk -F ';' '{printf "%-7s %-10s %-18s %-12s\n", $1, $2, $3, $4}'
+    echo ""
+    tput smso
+    echo -e "Create dump tables using values in bcmt.conf:"
+    tput rmso
+    tput bold
     echo "bcmt -d"
+    tput sgr 0
     echo ""
+    tput smso
     echo "Restore from dump tables to example_db:"
+    tput rmso
+    tput bold
     echo "bcmt -r example_db"
+    tput sgr 0
     echo ""
-    echo "Dumping from a remote database:"
+    tput smso
+    echo -e "Dumping from a remote database:"
+    tput rmso
+    tput bold
     echo "bcmt -h 10.0.8.190 -d example_remote_db"
+    tput sgr 0
     echo ""
-    echo "Restoring to a remote production database"
+    tput smso
+    echo -e "Restoring to a remote production database:"
+    tput rmso
+    tput bold
     echo "bcmt -h 130.31.233.159 -P 3308 -u prodUser -r example_prod_db"
+    tput sgr 0
     exit 0
 }
 die() {
