@@ -1,9 +1,14 @@
 #!/bin/bash
 #utility
+
 display_usage() {
-    echo "Usage:"
-    echo "${0##*/} [-d] [-r]"
-    exit 1
+    echo "usage: ${0##*/} [-h host] [-P port] [-u user] [-d] [-r] [database]" | awk -F ';' '{printf "%-4s %-10s %-60s\n", $1, $2, $3}'
+    echo "-h:;hostname;hostname of the target database server;Default value: 127.0.0.1" | awk -F ';' '{printf "%-4s %-10s %-40s %-30s\n", $1, $2, $3, $4}'
+    echo "-P:;port;port of the target database server;Default value: 3306" | awk -F ';' '{printf "%-4s %-10s %-40s %-30s\n", $1, $2, $3, $4}'
+    echo "-u:;user;user of the target database server;Default value: root" | awk -F ';' '{printf "%-4s %-10s %-40s %-30s\n", $1, $2, $3, $4}'
+    echo "-d:;dump;dump tables listed in tables.conf" | awk -F ';' '{printf "%-4s %-10s %-60s\n", $1, $2, $3}'
+    echo "-r:;restore;restore tables listed in tables.conf" | awk -F ';' '{printf "%-4s %-10s %-60s\n", $1, $2, $3}'
+    exit 0
 }
 die() {
     echo "ERROR: $* - Aborting."
@@ -19,24 +24,44 @@ popd > /dev/null
 . $SCRIPTPATH/includes/restMeta
 . $SCRIPTPATH/includes/readConf
 #initialize
+BCMT_HOST="127.0.0.1"
+BCMT_USER="root"
+BCMT_PORT="3306"
+BCMT_DBNAME=$1
 BCMT_INITOK=false
 BCMT_RESTORE=false
 BCMT_DUMP=false
-while getopts dr name
+while getopts h:P:u:dr name
 do
     case $name in
+        :)
+            display_usage
+            ;;
+        #host
+        h)
+            BCMT_HOST=$OPTARG
+            ;;
+        #Port
+        P)
+            BCMT_PORT=$OPTARG
+            ;;
+        #user
+        u)
+            BCMT_USER=$OPTARG
+            ;;
+        #dump
         d)
             $BCMT_RESTORE && die "Cannot dump and restore."
             BCMT_DUMP=true
             BCMT_INITOK=true
             ;;
+        #restore
         r)
             $BCMT_DUMP && die "Cannot dump and restore."
             BCMT_RESTORE=true
             BCMT_INITOK=true
             ;;
         *)
-            echo "Invalid argument specified."
             display_usage
             ;;
     esac
