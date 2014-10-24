@@ -35,7 +35,7 @@ popd > /dev/null
 BCMT_HOST="127.0.0.1"
 BCMT_USER="root"
 BCMT_PORT="3306"
-BCMT_DBNAME=$1
+BCMT_DBNAME="smarts_too_dallas_07142014"
 BCMT_INITOK=false
 BCMT_RESTORE=false
 BCMT_DUMP=false

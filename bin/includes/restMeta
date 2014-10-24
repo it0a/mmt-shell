@@ -1,6 +1,6 @@
 #!/bin/bash
 restore_table() {
     printf "Restoring $1..."
-    mysql -h $BCMT_HOST -P $BCMT_PORT -u $BCMT_USER -p$DBPASS smarts_too_dallas_07142014 < $SCRIPTPATH/dump/$1.sql
+    mysql -h $BCMT_HOST -P $BCMT_PORT -u $BCMT_USER -p$DBPASS $BCMT_DBNAME < $SCRIPTPATH/dump/$1.sql
     printf " OK\n"
 }
