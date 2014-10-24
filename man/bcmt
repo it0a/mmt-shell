@@ -2,10 +2,8 @@
 .SH NAME
 bcmt \- Blackcomb Meta Data Management Tool 
 .SH SYNOPSIS
-bcmt [dump | restore]
+bcmt [-h host] [-P port] [-u user] [-d|-r]
 .SH DESCRIPTION
 bcmt is a tool for managing Blackcomb metadata across multiple environments.
-.SH BUGS
-No known bugs.
 .SH AUTHOR
 Jordan Gonzalez (jordan.gonzalez@streamlinx.com)
