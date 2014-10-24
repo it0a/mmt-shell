@@ -12,7 +12,6 @@ attempt_connection() {
     CONNRESULT=$?
     if [ $CONNRESULT = "0" ]
     then
-        BCMT_DBINITOK=true
         printf " OK\n"
     else
         printf " FAIL\n"

@@ -77,20 +77,15 @@ done
 if [ $BCMT_INITOK = true ]
 then
     do_dbinit
-    if [ $BCMT_DBINITOK = true ]
+    read_tables
+    if [ $BCMT_DUMP = true ]
     then
-        read_tables
-        if [ $BCMT_DUMP = true ]
-        then
-            for table in "${BCMT_TABLES[@]}"; do dump_table $table; done
-        elif [ $BCMT_RESTORE = true ]
-        then
-            for table in ${BCMT_TABLES[@]}; do restore_table $table; done
-        else
-            die "Invalid operation"
-        fi
+        for table in "${BCMT_TABLES[@]}"; do dump_table $table; done
+    elif [ $BCMT_RESTORE = true ]
+    then
+        for table in ${BCMT_TABLES[@]}; do restore_table $table; done
     else
-        die "Couldn't connect to database"
+        die "Invalid operation"
     fi
 else
     display_usage
