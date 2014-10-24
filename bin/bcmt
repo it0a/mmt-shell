@@ -4,6 +4,7 @@ pushd `dirname $0` > /dev/null
 SCRIPTPATH=`pwd -P`
 popd > /dev/null
 . $SCRIPTPATH/includes/colors
+. $SCRIPTPATH/includes/pretty
 . $SCRIPTPATH/includes/dbinit
 . $SCRIPTPATH/includes/dumpMeta
 . $SCRIPTPATH/includes/restMeta
@@ -113,9 +114,11 @@ then
     if [ $BCMT_DUMP = true ]
     then
         for table in "${BCMT_TABLES[@]}"; do dump_table $table; done
+        done_status
     elif [ $BCMT_RESTORE = true ]
     then
         for table in ${BCMT_TABLES[@]}; do restore_table $table; done
+        done_status
     else
         die "Invalid operation"
     fi

@@ -1,22 +1,21 @@
 #!/bin/bash
 get_db_pass() {
     stty -echo
-    printf "Password for ${COLOR_WHITE}$BCMT_USER${COLOR_LIGHTGREEN}@${COLOR_LIGHTGRAY}$BCMT_HOST${COLOR_NONE}: "
+    printf "Password for ${COLOR_LIGHTGREEN}$BCMT_USER${COLOR_LIGHTCYAN}@${COLOR_WHITE}$BCMT_HOST${COLOR_NONE}: "
     read DBPASS
     stty echo
 }
 attempt_connection() {
     echo ""
-    echo "Connecting to $BCMT_HOST:$BCMT_PORT/$BCMT_DBNAME..."
-    echo -en "\033[1A\033[1;35mConnected\033[1B\033[6D${COLOR_NONE}"
+    unk_status "Connecting to ${COLOR_WHITE}$BCMT_HOST:$BCMT_PORT/$BCMT_DBNAME${COLOR_NONE} as ${COLOR_LIGHTGREEN}$BCMT_USER${COLOR_NONE}..."
     BCMT_DBINITOK=false
     timeout 5s mysql -h $BCMT_HOST -P $BCMT_PORT -u $BCMT_USER -p$DBPASS $BCMT_DBNAME -e exit 2>/dev/null 
     CONNRESULT=$?
     if [ $CONNRESULT = "0" ]
     then
-        printf " OK\n"
+        unk_ok_status
     else
-        printf " FAIL\n"
+        unk_fail_status
         die "Unable to connect to database"
     fi
 }
