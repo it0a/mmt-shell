@@ -8,7 +8,7 @@ popd > /dev/null
 . $SCRIPTPATH/includes/restMeta
 . $SCRIPTPATH/includes/readConf
 do_init $1
-if [ $BCMT_INITOK = "1" ]
+if [ $BCMT_INITOK = "0" ]
 then
     do_dbinit
     if [ $BCMT_DBINITOK = "0" ]
@@ -24,7 +24,7 @@ then
             echo "This should never happen!"
         fi
     else
-        echo "Couldn't connect..."
+        printf "\nCouldn't connect...\n"
     fi
 else
     echo "Available commands:"
