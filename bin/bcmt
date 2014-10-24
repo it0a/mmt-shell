@@ -2,12 +2,21 @@
 #utility
 
 display_usage() {
-    echo "usage: ${0##*/} [-h host] [-P port] [-u user] [-d] [-r] [database]" | awk -F ';' '{printf "%-4s %-10s %-60s\n", $1, $2, $3}'
-    echo "-h:;hostname;hostname of the target database server;Default value: 127.0.0.1" | awk -F ';' '{printf "%-4s %-10s %-40s %-30s\n", $1, $2, $3, $4}'
-    echo "-P:;port;port of the target database server;Default value: 3306" | awk -F ';' '{printf "%-4s %-10s %-40s %-30s\n", $1, $2, $3, $4}'
-    echo "-u:;user;user of the target database server;Default value: root" | awk -F ';' '{printf "%-4s %-10s %-40s %-30s\n", $1, $2, $3, $4}'
-    echo "-d:;dump;dump tables listed in tables.conf" | awk -F ';' '{printf "%-4s %-10s %-60s\n", $1, $2, $3}'
-    echo "-r:;restore;restore tables listed in tables.conf" | awk -F ';' '{printf "%-4s %-10s %-60s\n", $1, $2, $3}'
+    echo "usage: ${0##*/} [-h host] [-P port] [-u user] [-d] [-r] [database]"
+    echo "flag;name;description;default"              | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    echo "====;====;===========;======="              | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    echo "-h:;host;host of target database;127.0.0.1" | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    echo "-P:;port;port of target database;3306"      | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    echo "-u:;user;user of target database;root"      | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    echo "-d:;dump;dump tables;tables.conf"           | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    echo "-r:;restore;restore tables;tables.conf"     | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    echo ""
+    echo "example command;description"                                                                      | awk -F ';' '{printf "%-44s %-62s\n", $1, $2}'
+    echo "===============;==========="                                                                      | awk -F ';' '{printf "%-44s %-62s\n", $1, $2}'
+    echo "bcmt -d;Dump tables to ./dump from 127.0.0.1:3306 as user 'root'"                                 | awk -F ';' '{printf "%-44s %-62s\n", $1, $2}'
+    echo "bcmt -r;Restore tables from ./dump to 127.0.0.1:3306 as user 'root'"                              | awk -F ';' '{printf "%-44s %-62s\n", $1, $2}'
+    echo "bcmt -h 10.0.8.190 -d;Dump tables from 10.0.8.190:3306 as user 'root' to ./dump/"                 | awk -F ';' '{printf "%-44s %-62s\n", $1, $2}'
+    echo "bcmt -h 10.0.8.190 -P 3308 -u other -r;Restore ./dump/ tables to 10.0.8.190:3308 as user 'other'" | awk -F ';' '{printf "%-44s %-62s\n", $1, $2}'
     exit 0
 }
 die() {
