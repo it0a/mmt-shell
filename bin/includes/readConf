@@ -1,0 +1,5 @@
+#!/bin/bash
+read_tables() {
+    readarray BCMT_TABLES < $SCRIPTPATH/tables.conf
+    for item in "${BCMT_TABLES[@]}"; do echo $item; done
+}

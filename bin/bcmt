@@ -6,18 +6,24 @@ popd > /dev/null
 . $SCRIPTPATH/includes/dbinit
 . $SCRIPTPATH/includes/dumpMeta
 . $SCRIPTPATH/includes/restMeta
+. $SCRIPTPATH/includes/readConf
 do_init $1
 if [ $BCMT_INITOK = "1" ]
 then
     do_dbinit
     if [ $BCMT_DBINITOK = "0" ]
     then
+        read_tables
         if [ $BCMT_OPTION = "dump" ]
         then
-            do_dump
+            for table in ${BCMT_TABLES[@]}; 
+            do dump_table $item; 
+            done
         elif [ $BCMT_OPTION = "restore" ]
         then
-            do_restore
+            for table in ${BCMT_TABLES[@]}; 
+            do restore_table $item; 
+            done
         else
             echo "This should never happen!"
         fi
