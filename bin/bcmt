@@ -80,7 +80,6 @@ do
 done
 if [ $1 ]
 then
-    echo "Overriding"
     BCMT_DBNAME=$1
 fi
 if [ $BCMT_INITOK = true ]
