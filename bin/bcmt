@@ -21,7 +21,7 @@ then
         then
             for table in ${BCMT_TABLES[@]}; do restore_table $table; done
         else
-            echo "This should never happen!"
+            echo "Unhandled option"
         fi
     else
         printf "\nCouldn't connect...\n"
