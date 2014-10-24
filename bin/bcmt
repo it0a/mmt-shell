@@ -96,13 +96,9 @@ do
             BCMT_RESTORE=true
             BCMT_INITOK=true
             ;;
-        #invalid
-        *)
-            display_usage
-            ;;
     esac
-    shift
 done
+shift $((OPTIND-1))
 if [ $1 ]
 then
     BCMT_DBNAME=$1
