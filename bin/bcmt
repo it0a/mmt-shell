@@ -69,7 +69,7 @@ done
 if [ $BCMT_INITOK = true ]
 then
     do_dbinit
-    if [ $BCMT_DBINITOK = "0" ]
+    if [ $BCMT_DBINITOK = true ]
     then
         read_tables
         if [ $BCMT_DUMP = true ]

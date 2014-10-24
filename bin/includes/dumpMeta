@@ -1,6 +1,6 @@
 #!/bin/bash
 dump_table() {
     printf "Dumping $1..."
-    mysqldump -u root -p$DBPASS --extended-insert=FALSE --skip-comments smarts_too_dallas_07142014 $1 > $SCRIPTPATH/dump/$1.sql
+    mysqldump -h $BCMT_HOST -P $BCMT_PORT -u $BCMT_USER -p$DBPASS --extended-insert=FALSE --skip-comments smarts_too_dallas_07142014 $1 > $SCRIPTPATH/dump/$1.sql
     printf " OK\n"
 }
