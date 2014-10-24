@@ -42,6 +42,7 @@ BCMT_DUMP=false
 while getopts h:P:u:dr name
 do
     case $name in
+        #missing optarg
         :)
             display_usage
             ;;
@@ -69,6 +70,7 @@ do
             BCMT_RESTORE=true
             BCMT_INITOK=true
             ;;
+        #invalid
         *)
             display_usage
             ;;
