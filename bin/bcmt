@@ -16,15 +16,10 @@ then
         read_tables
         if [ $BCMT_OPTION = "dump" ]
         then
-            for table in "${BCMT_TABLES[@]}"; 
-            do 
-                dump_table $table; 
-            done
+            for table in "${BCMT_TABLES[@]}"; do dump_table $table; done
         elif [ $BCMT_OPTION = "restore" ]
         then
-            for table in ${BCMT_TABLES[@]}; 
-            do restore_table $table; 
-            done
+            for table in ${BCMT_TABLES[@]}; do restore_table $table; done
         else
             echo "This should never happen!"
         fi
