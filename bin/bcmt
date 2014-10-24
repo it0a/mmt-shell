@@ -11,16 +11,16 @@ popd > /dev/null
 #utility
 display_usage() {
     echo "usage: ${0##*/} [-h host] [-P port] [-u user] [-d] [-r] [database] (default: $BCMT_DBNAME)"
-    echo "flag;name;description;default"              | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
-    echo "====;====;===========;======="              | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    echo "flag;name;description;default"               | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    echo "====;====;===========;======="               | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
     echo "-h:;host;host of target database;$BCMT_HOST" | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
-    echo "-P:;port;port of target database;$BCMT_PORT"      | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
-    echo "-u:;user;user of target database;$BCMT_USER"      | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
-    echo "-d:;dump;dump tables;tables.conf"           | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
-    echo "-r:;restore;restore tables;tables.conf"     | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    echo "-P:;port;port of target database;$BCMT_PORT" | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    echo "-u:;user;user of target database;$BCMT_USER" | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    echo "-d:;dump;dump tables;"                       | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    echo "-r:;restore;restore tables;"                 | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
     echo ""
-    echo "Create dump tables from example_db:"
-    echo "bcmt -d example_db"
+    echo "Create dump tables using values in bcmt.conf:"
+    echo "bcmt -d"
     echo ""
     echo "Restore from dump tables to example_db:"
     echo "bcmt -r example_db"
