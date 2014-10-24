@@ -1,35 +1,4 @@
 #!/bin/bash
-#utility
-
-display_usage() {
-    echo "usage: ${0##*/} [-h host] [-P port] [-u user] [-d] [-r]"
-    echo "flag;name;description;default"              | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
-    echo "====;====;===========;======="              | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
-    echo "-h:;host;host of target database;127.0.0.1" | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
-    echo "-P:;port;port of target database;3306"      | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
-    echo "-u:;user;user of target database;root"      | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
-    echo "-d:;dump;dump tables;tables.conf"           | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
-    echo "-r:;restore;restore tables;tables.conf"     | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
-    echo ""
-    echo "Example usage"
-    echo ""
-    echo "Dump tables to ./dump from 127.0.0.1:3306 as user 'root':"
-    echo "bcmt -d"
-    echo ""
-    echo "Restore tables from ./dump to 127.0.0.1:3306 as user 'root'"
-    echo "bcmt -r"
-    echo ""
-    echo "Dump tables from 10.0.8.190:3306 as user 'root' to ./dump/"
-    echo "bcmt -h 10.0.8.190 -d"
-    echo ""
-    echo "Restore ./dump/ tables to 10.0.8.190:3308 as user 'other'"
-    echo "bcmt -h 10.0.8.190 -P 3308 -u other -r"
-    exit 0
-}
-die() {
-    echo "ERROR: $* - Aborting."
-    exit 1
-}
 #include
 pushd `dirname $0` > /dev/null
 SCRIPTPATH=`pwd -P`
@@ -38,11 +7,36 @@ popd > /dev/null
 . $SCRIPTPATH/includes/dumpMeta
 . $SCRIPTPATH/includes/restMeta
 . $SCRIPTPATH/includes/readConf
+. $SCRIPTPATH/bcmt.conf
+#utility
+display_usage() {
+    echo "usage: ${0##*/} [-h host] [-P port] [-u user] [-d] [-r] [database] (default: $BCMT_DBNAME)"
+    echo "flag;name;description;default"              | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    echo "====;====;===========;======="              | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    echo "-h:;host;host of target database;$BCMT_HOST" | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    echo "-P:;port;port of target database;$BCMT_PORT"      | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    echo "-u:;user;user of target database;$BCMT_USER"      | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    echo "-d:;dump;dump tables;tables.conf"           | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    echo "-r:;restore;restore tables;tables.conf"     | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
+    echo ""
+    echo "Create dump tables from example_db:"
+    echo "bcmt -d example_db"
+    echo ""
+    echo "Restore from dump tables to example_db:"
+    echo "bcmt -r example_db"
+    echo ""
+    echo "Dumping from a remote database:"
+    echo "bcmt -h 10.0.8.190 -d example_remote_db"
+    echo ""
+    echo "Restoring to a remote production database"
+    echo "bcmt -h 130.31.233.159 -P 3308 -u prodUser -r example_prod_db"
+    exit 0
+}
+die() {
+    echo "ERROR: $* - Aborting."
+    exit 1
+}
 #initialize
-BCMT_HOST="127.0.0.1"
-BCMT_USER="root"
-BCMT_PORT="3306"
-BCMT_DBNAME="smarts_too_dallas_07142014"
 BCMT_INITOK=false
 BCMT_RESTORE=false
 BCMT_DUMP=false
@@ -82,7 +76,13 @@ do
             display_usage
             ;;
     esac
+    shift
 done
+if [ $1 ]
+then
+    echo "Overriding"
+    BCMT_DBNAME=$1
+fi
 if [ $BCMT_INITOK = true ]
 then
     do_dbinit
