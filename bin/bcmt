@@ -11,12 +11,19 @@ display_usage() {
     echo "-d:;dump;dump tables;tables.conf"           | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
     echo "-r:;restore;restore tables;tables.conf"     | awk -F ';' '{printf "%-7s %-10s %-25s %-12s\n", $1, $2, $3, $4}'
     echo ""
-    echo "example command;description"                                                                      | awk -F ';' '{printf "%-44s %-62s\n", $1, $2}'
-    echo "===============;==========="                                                                      | awk -F ';' '{printf "%-44s %-62s\n", $1, $2}'
-    echo "bcmt -d;Dump tables to ./dump from 127.0.0.1:3306 as user 'root'"                                 | awk -F ';' '{printf "%-44s %-62s\n", $1, $2}'
-    echo "bcmt -r;Restore tables from ./dump to 127.0.0.1:3306 as user 'root'"                              | awk -F ';' '{printf "%-44s %-62s\n", $1, $2}'
-    echo "bcmt -h 10.0.8.190 -d;Dump tables from 10.0.8.190:3306 as user 'root' to ./dump/"                 | awk -F ';' '{printf "%-44s %-62s\n", $1, $2}'
-    echo "bcmt -h 10.0.8.190 -P 3308 -u other -r;Restore ./dump/ tables to 10.0.8.190:3308 as user 'other'" | awk -F ';' '{printf "%-44s %-62s\n", $1, $2}'
+    echo "Example usage"
+    echo ""
+    echo "Dump tables to ./dump from 127.0.0.1:3306 as user 'root':"
+    echo "bcmt -d"
+    echo ""
+    echo "Restore tables from ./dump to 127.0.0.1:3306 as user 'root'"
+    echo "bcmt -r"
+    echo ""
+    echo "Dump tables from 10.0.8.190:3306 as user 'root' to ./dump/"
+    echo "bcmt -h 10.0.8.190 -d"
+    echo ""
+    echo "Restore ./dump/ tables to 10.0.8.190:3308 as user 'other'"
+    echo "bcmt -h 10.0.8.190 -P 3308 -u other -r"
     exit 0
 }
 die() {
