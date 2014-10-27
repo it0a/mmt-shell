@@ -9,7 +9,8 @@ popd > /dev/null
 . $SCRIPTPATH/includes/dumpMeta
 . $SCRIPTPATH/includes/restMeta
 . $SCRIPTPATH/includes/readConf
-. $SCRIPTPATH/bcmt.conf
+. $SCRIPTPATH/dump.conf
+. $BCMT_DUMPDIR/bcmt.conf
 #utility
 display_usage() {
     tput bold
