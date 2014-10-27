@@ -1,6 +1,6 @@
 #!/bin/bash
 restore_table() {
     unk_status "Restoring $1..."
-    mysql -h $BCMT_HOST -P $BCMT_PORT -u $BCMT_USER -p$DBPASS $BCMT_DBNAME < $BCMT_DUMPDIR/dump/$1.sql
+    mysql -h $BCMT_HOST -P $BCMT_PORT -u $BCMT_USER -p$DBPASS $BCMT_DBNAME < $BCMT_DUMPDIR/$1.sql
     unk_ok_status
 }
