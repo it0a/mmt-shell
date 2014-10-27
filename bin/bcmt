@@ -11,6 +11,7 @@ popd > /dev/null
 . $SCRIPTPATH/dump.conf
 . $SCRIPTPATH/includes/readConf
 . $BCMT_DUMPDIR/bcmt.conf
+
 #utility
 display_usage() {
     tput bold
@@ -63,6 +64,7 @@ die() {
     exit 1
 }
 #initialize
+[ -d $BCMT_DUMPDIR ] || die "Dump directory $BCMT_DUMPDIR cannot be found/does not exist (check dump.conf)"
 BCMT_INITOK=false
 BCMT_RESTORE=false
 BCMT_DUMP=false
