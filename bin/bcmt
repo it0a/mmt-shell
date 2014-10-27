@@ -8,8 +8,8 @@ popd > /dev/null
 . $SCRIPTPATH/includes/dbinit
 . $SCRIPTPATH/includes/dumpMeta
 . $SCRIPTPATH/includes/restMeta
-. $SCRIPTPATH/includes/readConf
 . $SCRIPTPATH/dump.conf
+. $SCRIPTPATH/includes/readConf
 . $BCMT_DUMPDIR/bcmt.conf
 #utility
 display_usage() {

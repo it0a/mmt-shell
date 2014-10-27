@@ -1,4 +1,4 @@
 #!/bin/bash
 read_tables() {
-    readarray BCMT_TABLES < $SCRIPTPATH/tables.conf
+    readarray BCMT_TABLES < $BCMT_DUMPDIR/tables.conf
 }
